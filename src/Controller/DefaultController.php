@@ -14,13 +14,31 @@ class DefaultController
 
     /**
      * @Route("/", name="homepage")
+     * @param Environment string
      * @return Response
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twiig\Error\SyntaxError
      */
  public function homepageAction(Environment $twig)
  {
-     return new Response($twig->render('Default/homepage.html.twig'));
+     $color = 'blue';
+
+     return new Response($twig->render('Default/homepage.html.twig',
+[
+             'color' => $color,
+             'itemlist' => [1,2,4,5,7,89,77,66],
+     'currentDate' => new \DateTime()
+
+
+
+         ]
+     )
+
+     );
 
  }
+
+
 
 
 

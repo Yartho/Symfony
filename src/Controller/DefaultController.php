@@ -14,7 +14,7 @@ class DefaultController
 
     /**
      * @Route("/", name="homepage")
-     * @param Environment string
+     * @param Environment $twig
      * @return Response
      * @throws \Twig\Error\RuntimeError
      * @throws \Twiig\Error\SyntaxError

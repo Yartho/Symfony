@@ -6,16 +6,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item{% if app.request.attributes.get('_route') == 'homepage' %} active {% endif %}">
-                <a class="nav-link" href={{ path ('homepage') }}>Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href={{ path ('homepage')}}> {{ 'NAV.HOME'| trans }} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item{% if app.request.attributes.get('_route') == 'terms_of_service' %} active {% endif %}">
-                <a class="nav-link" href={{ path('terms_of_service') }}>Terms</a>
+                <a class="nav-link" href={{ path('terms_of_service') }}>{{ 'NAV.TERMS'| trans }}</a>
             </li>
             <li class="nav-item{% if app.request.attributes.get('_route') == 'app_login' %} active {% endif %}">
-                <a class="nav-link" href={{ path('app_login') }}>Login</a>
+                <a class="nav-link" href={{ path('app_login') }}>{{ 'NAV.LOGIN' | trans }}</a>
             </li>
             <li class="nav-item{% if app.request.attributes.get('_route') == 'app_register' %} active {% endif %}">
-                <a class="nav-link " href={{ 'register' }}>Register</a>
+                <a class="nav-link " href={{ 'register' }}>{{ 'NAV.REGISTER' | trans  }}</a>
             </li>
         </ul>
     </div>

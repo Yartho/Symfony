@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -13,6 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *
  *
  *     })
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface
 {
@@ -86,6 +88,7 @@ class User implements UserInterface
 
     public function __construct()
     {
+        $this->createdAt=new \DateTime();
         $this->pictures = new ArrayCollection();
         $this->lovedpictures = new ArrayCollection();
     }
